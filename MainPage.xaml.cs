@@ -1,20 +1,25 @@
-﻿namespace MauiHue;
+﻿using Q42.HueApi.Interfaces;
+using Q42.HueApi;
+
+namespace MauiHue;
 
 public partial class MainPage : ContentPage
 {
-	int count = 0;
+    public MainPage()
+    {
+        InitializeComponent();
+    }
 
-	public MainPage()
-	{
-		InitializeComponent();
-	}
+    private async void OnCounterClicked(object sender, EventArgs e)
+    {
+        var bridgeIP = "XXX.XXX.XX.XX";
+        var appKey = "abcdefghijklmnopqrstuvwxyz1234567890";
 
-	private void OnCounterClicked(object sender, EventArgs e)
-	{
-		count++;
-		CounterLabel.Text = $"Current count: {count}";
+        ILocalHueClient client = new LocalHueClient(bridgeIP);
+        client.Initialize(appKey);
 
-		SemanticScreenReader.Announce(CounterLabel.Text);
-	}
+        var command = new LightCommand { Alert = Alert.Once };
+        await client.SendCommandAsync(command);
+    }
 }
 

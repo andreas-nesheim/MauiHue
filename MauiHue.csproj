@@ -45,4 +45,8 @@
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <PackageReference Include="Q42.HueApi" Version="3.19.3" />
+	</ItemGroup>
+
 </Project>
