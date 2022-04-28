@@ -14,7 +14,7 @@
                 Text="Hello, Hue!" />
 
             <Button
-                Clicked="OnCounterClicked"
+                Clicked="OnButtonClicked"
                 FontAttributes="Bold"
                 HorizontalOptions="Center"
                 Text="Let there be light!" />

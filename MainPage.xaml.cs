@@ -10,7 +10,7 @@ public partial class MainPage : ContentPage
         InitializeComponent();
     }
 
-    private async void OnCounterClicked(object sender, EventArgs e)
+    private async void OnButtonClicked(object sender, EventArgs e)
     {
         var bridgeIP = "XXX.XXX.XX.XX";
         var appKey = "abcdefghijklmnopqrstuvwxyz1234567890";
